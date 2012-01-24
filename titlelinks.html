@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>title links</title>
+	<meta name="description" content="title links">
+	<meta name="author" content="Luís Almeida">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jPages.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/github.css">
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jPages.js"></script>
+    <script type="text/javascript" src="js/highlight.pack.js"></script>
+    <script type="text/javascript" src="js/tabifier.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+
+<script>
+/* when document is ready */
+$(function(){
+	
+    /* 
+     * initiate the plugin without buttons and numeration
+     * setting midRange to 4 (number of pages) 
+     * perPage to 1 and links to 'title'
+     */
+	$("div.holder").jPages({
+        containerID : "pageContainer",
+        first       : false,
+        previous    : false,
+        next        : false,
+        last        : false,
+        perPage     : 1,
+        midRange    : 3,
+        links       : "title",
+        animation   : "flipInY"
+	});
+
+});
+</script>
+
+    <style type="text/css">
+        .holder {
+    		margin: 15px 0 30px 0;
+    	}
+    
+    	.holder a {
+    		font-size: 12px;
+    		cursor: pointer;
+    		margin: 0 25px 0 0;
+    		color: #333;
+    	}
+    
+    	.holder a:hover {
+    		background-color: #222;
+    		color: #fff;
+    	}
+        
+        .holder a.jp-current { 
+    		color: #FF4242;
+		}
+    
+    	.holder a.jp-current:hover {
+            cursor: default;
+            background: none;
+        }
+	</style>
+
+</head>
+<body>
+
+<div id="container" class="clearfix">
+
+	<div id="sidebar">
+        <h1>jPages</h1>
+    	<ul>
+			<li><a href="documentation.html">documentation</a></li>
+            <li><a href="theauthor.html">the author</a></li>
+            <li><a href="download.html">download</a></li>
+		</ul>
+        
+		<h2>Examples</h2>
+		<ul>
+			<li><a href="defaults.html">defaults</a></li>
+    		<li><a href="pagination.html">pagination</a></li>
+            <li><a href="itemsperpage.html">items per page</a></li>
+			<li><a href="customizebuttons.html">customize buttons</a></li>
+            <li><a href="custombuttons.html">custom buttons</a></li>
+			<li><a href="blanklinks.html">blank links</a></li>
+            <li><a href="titlelinks.html">title links</a></li>
+			<li><a href="keybrowse.html">key browse</a></li>
+            <li><a href="scrollbrowse.html">scroll browse</a></li>
+			<li><a href="auto.html">auto</a></li>
+			<li><a href="direction.html">direction</a></li>
+			<li><a href="cssanimation.html">css animation</a></li>
+            <li><a href="jqueryanimation.html">jQuery animation</a></li>
+			<li><a href="callback.html">callback</a></li>
+            <li><a href="jumptopage.html">jump to page</a></li>
+            <li><a href="destroy.html">destroy</a></li>
+            <li><a href="lazyload.html">lazy load</a></li>
+		</ul>
+        
+        <h2>Demos</h2>
+        <ul>
+			<li><a href="mosaic.html">mosaic</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="table.html">table</a></li>
+		</ul>
+	</div> <!--! end of #sidebar -->
+
+	<div id="content" class="defaults">
+
+		<h2>Title Links</h2>
+        
+        <p>You can also use jPages to easily create 'single-page' websites and keep the cool animations when users browse between pages.</p>
+        <p>You just have to set the names for the pages in the property 'data-title' of the correspondent page holder and set the plugin parameter 'links' to 'title'.</p>
+        
+        
+		<!-- navigation holder -->
+        <div class="holder">
+            <!-- optional CEO friendly html to be replaced by jPages generated links -->
+            <ul>
+                <li>Home</li>
+                <li>About me</li>
+                <li>Portfolio</li>
+                <li>Contacts</li>
+            </ul>
+        </div>
+        
+        <!-- pages -->
+        <div id="pageContainer">
+            <!-- About page -->
+            <div data-title="About">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <!-- Portfolio page -->
+            <div data-title="Portfolio">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+            </div>
+            <!-- Contacts page -->
+            <div data-title="Competences">
+                Eruditi dolores adversarium mei te, in quo malis eloquentiam. Pro in aperiam expetendis, offendit copiosae dignissim eum te, ipsum minimum salutatus et mel. Munere integre deterruisset ea vel. Eum cu dictas minimum adolescens, nec ne quidam reformidans repudiandae, mel cu reque nulla deserunt. Ut quaestio urbanitas mea, utroque maiorum splendide vis ea, viris explicari sea ut. Sit choro expetendis at, mei at delectus adolescens. An sit probo illud urbanitas.
+            </div>
+            <!-- Contacts page -->
+            <div data-title="Contacts">
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+            </div>
+        </div>
+
+	</div> <!--! end of #content -->
+</div> <!--! end of #container -->
+
+</body>
+</html>

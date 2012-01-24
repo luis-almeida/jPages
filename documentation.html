@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>documentation</title>
+	<meta name="description" content="documentation">
+	<meta name="author" content="Luís Almeida">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/github.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/highlight.pack.js"></script>
+    <script src="js/js.js"></script>
+    
+    <script>
+        $(function(){
+        
+            $('pre code').each( function(i, e) {
+                hljs.highlightBlock(e, '    ');
+            });
+        
+        });
+    </script>
+</head>
+<body>
+
+<div id="container" class="clearfix">
+
+	<div id="sidebar">
+        <h1>jPages</h1>
+    	<ul>
+			<li><a href="documentation.html">documentation</a></li>
+            <li><a href="theauthor.html">the author</a></li>
+            <li><a href="download.html">download</a></li>
+		</ul>
+        
+		<h2>Examples</h2>
+		<ul>
+			<li><a href="defaults.html">defaults</a></li>
+    		<li><a href="pagination.html">pagination</a></li>
+            <li><a href="itemsperpage.html">items per page</a></li>
+			<li><a href="customizebuttons.html">customize buttons</a></li>
+            <li><a href="custombuttons.html">custom buttons</a></li>
+			<li><a href="blanklinks.html">blank links</a></li>
+            <li><a href="titlelinks.html">title links</a></li>
+			<li><a href="keybrowse.html">key browse</a></li>
+            <li><a href="scrollbrowse.html">scroll browse</a></li>
+			<li><a href="auto.html">auto</a></li>
+			<li><a href="direction.html">direction</a></li>
+			<li><a href="cssanimation.html">css animation</a></li>
+            <li><a href="jqueryanimation.html">jQuery animation</a></li>
+			<li><a href="callback.html">callback</a></li>
+            <li><a href="jumptopage.html">jump to page</a></li>
+            <li><a href="destroy.html">destroy</a></li>
+            <li><a href="lazyload.html">lazy load</a></li>
+		</ul>
+        
+        <h2>Demos</h2>
+        <ul>
+			<li><a href="mosaic.html">mosaic</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="table.html">table</a></li>
+		</ul>
+	</div> <!--! end of #sidebar -->
+
+	<div id="content" class="documentation">
+
+    	<h2>Options</h2>
+
+		<h3>container <span>String</span></h3>
+		<strong>Default value:</strong> <i>Required! (No default)</i>
+		<p>jQuery selector of the container of the items you want to paginate. It can be an UL, OL, DIV etc.</p>
+        
+        <h3>first <span>String || false</span></h3>
+    	<strong>Default value:</strong> <i>false</i>
+		<p>In this parameter you can customize the button for the first page in the navigation. By default this parameter is set to false so the 'first' button won't be created.</p>
+        <p>To set the name for this button you just have to pass it as a string. <a href="customizebuttons.html">View example</a>.</p>
+        <p>In case you want to use a custom element instead of the auto generated one, you can pass the selector for that element. <a href="custombuttons.html">View example</a>.</p>
+        
+        <h3>previous <span>String || false</span></h3>
+        <strong>Default value:</strong> <i>"← previous"</i>
+        <p>Same as the parameter 'first' but for the button 'previous'.</p>
+        
+        <h3>next <span>String || false</span></h3>
+        <strong>Default value:</strong> <i>"next →"</i>
+        <p>Same as the parameter 'first' but for the button 'next'.</p>
+        
+        <h3>last <span>String || false</span></h3>
+        <strong>Default value:</strong> <i>false</i>
+        <p>Same as the parameter 'first' but for the button 'last'.</p>
+        
+		<h3>startPage <span>Integer</span></h3>
+		<strong>Default value:</strong> <i>1</i>
+		<p>The page you want to be displayed first when the plugin is applied.</p>
+
+		<h3>perPage <span>Integer</span></h3>
+		<strong>Default value:</strong> <i>10</i>
+		<p>Number of items to be displayed per page. <a href="itemsperpage.html">View example</a>.</p>
+
+		<h3>midRange <span>Integer</span></h3>
+		<strong>Default value:</strong> <i>5</i>
+		<p>Number of page links to display at one time i.e. let's say you have a total of 50 pages, instead of displaying links to each and every page, we display a range of pages around the current page that we're on.</p>
+		<p>Just a note, the mid range value should be an odd number so the display is symmetrical, but it can also be even if you like.</p>
+
+		<h3>startRange <span>Integer</span></h3>
+		<strong>Default value:</strong> <i>1</i>
+		<p>Number of page links always visible at the beggining of the nav. For instance, if you set startRange to 3, page links 1, 2 and 3 will allways be visible no matter which is the current page.</p>
+
+		<h3>endRange <span>Integer</span></h3>
+		<strong>Default value:</strong> <i>1</i>
+		<p>Number of page links always visible at the end of the nav.</p>
+        
+        <h3>keyBrowse <span>Boolean</span></h3>
+    	<strong>Default value:</strong> <i>false</i>
+		<p>If you set keyBrowse to true you can browse the pages using your keyboard left and right keys. <a href="keybrowse.html">View example</a>.</p>
+        
+        <h3>scrollBrowse <span>Boolean</span></h3>
+        <strong>Default value:</strong> <i>false</i>
+		<p>If you set scrollBrowse to true when you hover the cursor over the items you can use the scroll wheel to browse between pages. <a href="scrollbrowse.html">View example</a>.</p>
+
+		<h3>pause <span>Integer</span></h3>
+		<strong>Default value:</strong> <i>0</i>
+		<p>If you want the plugin to automatically rotate the "pages", with this parameter you can control the length of the pause between each "page turn" in milliseconds.</p>
+        <p>When pause is set to false or 0 (default), pages won't automatically rotate. View an example of the auto rotation <a href="auto.html">here</a>.</p>
+
+		<h3>clickStop <span>Boolean</span></h3>
+		<strong>Default value:</strong> <i>true</i>
+		<p>If you activated page rotation by setting a pause value, you can stop auto page turn when user clicks on a navigation link for the first time by setting clickStop to true.</p>
+		<p>Set it to false if you want pages to keep turning. <a href="auto.html">View example</a>.</p>
+
+		<h3>delay <span>Integer</span></h3>
+		<strong>Default value:</strong> <i>50</i>
+		<p>If you want page items to be displayed one by one, you can control the delay between item display with this parameter (in milliseconds). If you don't set any value or set it to 0, items will be displayed all at the same time.</p>
+        
+		<h3>direction <span>String</span></h3>
+		<strong>Default value:</strong> <i>"forward"</i>
+		<p>If you set a delay time between each item display you can also choose in what direction will they appear.</p>
+        <p>The options are: "forward", "backwards", "auto" or "random". <a href="direction.html">View example</a>.</p>
+        
+		<h3>animation <span>String</span></h3>
+		<strong>Default value:</strong> <i>empty string (No CSS3 animation)</i>
+        <p>jPages works perfectly with <a href="http://daneden.me/animate/">Animate.css</a> but you must of course add the link to this CSS3 library in the head of your page first. Once you've done that, you can choose any of the entrance animations - jPages only supports entrance animations. <a href="cssanimation.html">View example</a>.</p>
+        <p>If you don't set any animation or if the browser doesn't support CSS3 Animations, jPages will fallback to the jQuery fadeIn effect. You can customize the speed of this effect in the parameter "fallback".</p>
+        
+        <h3>fallback <span>Integer</span></h3>
+    	<strong>Default value:</strong> <i>400</i>
+        <p>If you don't set a CSS3 animation in the parameter "animation" jPages will fallback to the jQuery fadeIn effect. You can costumize the fadeIn speed in this parameter. You can use milliseconds or the strings 'fast', 'slow' and 'normal'. <a href="jqueryanimation.html">View example</a>.</p>
+
+		<h3>minHeight <span>Boolean</span></h3>
+		<strong>Default value:</strong> <i>true</i>
+		<p>When a page turn occurs, some items will be hidden and some others will be shown. If you don't set a minimum height for the container you might perceive some height collapsing every time you turn pages. If you set minHeight to true, it will automatically set a minimum height for the item container to fix this issue. Set minHeight to false if you want to style this property yourself.</p>
+
+		<h3 id="callback">callback <span>function</span></h3>
+		<strong>Default value:</strong> <i>function( pages, items ) {}</i>
+		<p>In this parameter you can pass a function that will run after every page turn. This function receives two arguments (objects) that contain all the information available about the pages and the items:</p>
+
+        <p style="margin-top: 20px;"><b>Pages object properties:</b></p>
+        <dl class="clearfix">
+        
+            <dt>pages.current</dt>
+            <dd>current page number</dd>
+        
+            <dt>pages.interval</dt>
+            <dd>an object that contains two properties - interval.start and interval.end - corresponding to the midRange edges of pages in the navigation.</dd>
+        
+            <dt>pages.count</dt>
+            <dd>total number of pages</dd>
+        </dl>
+
+        <p style="margin-top: 20px;"><b>Items object properties:</b></p>
+        <dl class="clearfix">
+            <dt>items.showing</dt>
+            <dd>jQuery collection of the items currentely being displayed</dd>
+        
+            <dt>items.oncomming</dt>
+            <dd>jQuery collection of the items in the next page</dd>
+        
+            <dt>items.range</dt>
+            <dd>an object that contains two properties - range.start and range.end - corresponding to the range of items currentely being displayed.</dd>
+        
+            <dt>items.count</dt>
+            <dd>total number of items</dd>        
+        </dl>
+        
+        <p style="margin-top:10px">See how to create a legend for your pagination <a href="callback.html">here</a>.</p>
+
+	</div> <!--! end of #content -->
+</div> <!--! end of #container -->
+
+</body>
+</html>

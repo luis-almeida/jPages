@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>jPages</title>
+	<meta name="description" content="jPages">
+	<meta name="author" content="Luís Almeida">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/github.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/highlight.pack.js"></script>
+    <script src="js/js.js"></script>
+    
+    <script>
+        $(function(){
+        
+            $('pre code').each( function(i, e) {
+                hljs.highlightBlock(e, '    ');
+            });
+        
+        });
+    </script>
+</head>
+<body>
+
+<div id="container" class="clearfix">
+
+	<div id="sidebar">
+        <h1>jPages</h1>
+    	<ul>
+			<li><a href="documentation.html">documentation</a></li>
+            <li><a href="theauthor.html">the author</a></li>
+            <li><a href="download.html">download</a></li>
+		</ul>
+        
+		<h2>Examples</h2>
+		<ul>
+			<li><a href="defaults.html">defaults</a></li>
+    		<li><a href="pagination.html">pagination</a></li>
+            <li><a href="itemsperpage.html">items per page</a></li>
+			<li><a href="customizebuttons.html">customize buttons</a></li>
+            <li><a href="custombuttons.html">custom buttons</a></li>
+			<li><a href="blanklinks.html">blank links</a></li>
+            <li><a href="titlelinks.html">title links</a></li>
+			<li><a href="keybrowse.html">key browse</a></li>
+            <li><a href="scrollbrowse.html">scroll browse</a></li>
+			<li><a href="auto.html">auto</a></li>
+			<li><a href="direction.html">direction</a></li>
+			<li><a href="cssanimation.html">css animation</a></li>
+            <li><a href="jqueryanimation.html">jQuery animation</a></li>
+			<li><a href="callback.html">callback</a></li>
+            <li><a href="jumptopage.html">jump to page</a></li>
+            <li><a href="destroy.html">destroy</a></li>
+            <li><a href="lazyload.html">lazy load</a></li>
+		</ul>
+        
+        <h2>Demos</h2>
+        <ul>
+			<li><a href="mosaic.html">mosaic</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="table.html">table</a></li>
+		</ul>
+	</div> <!--! end of #sidebar -->
+
+	<div id="content" class="index">
+    
+        <h2 style="margin-top:0;">What does it do?</h2>
+        <p>jPages is a client-side pagination plugin but it gives you a lot more features comparing to most of the other plugins for this purpose, such as auto page turn, key and scroll browse, showing items with delay, completely customizable navigation panel and also integration with <a href="http://daneden.me/animate/">Animate.css</a> and <a href="http://www.appelsiini.net/projects/lazyload">Lazy Load</a>.</p> 
+        <p>Apart from all its features, the main diference for the other pagination plugins is that with jPages you can create as many navigation panels as you want and you can choose exactly where to place them.</p>
+        <p>The plugin is very unobtrusive and it won't apply any extra styles to the items you are paginating. It will only create and insert the links inside the element(s) you are applying the plugin to, in order to turn them into navigation panel(s).</p>
+    
+        <h2>How to</h2>
+        
+        <p>Add the following code to the &lt;head&gt; section of your page (correct file locations first):</p>
+        
+<pre><code class="html">&lt;link rel="stylesheet" href="css/jPages.css"&gt;
+&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jPages.js"&gt;&lt;/script&gt;
+</code></pre>
+
+        <p>In case you want to use <a href="http://daneden.me/animate/">Animate.css</a> animations you will also need to add the file:</p>
+        
+<pre><code class="html" style="display:block;">&lt;link rel="stylesheet" href="css/animate.css"&gt;
+
+</code></pre>
+
+        <p>Example source code:</p>
+<pre><code class="html">&lt;!-- Future navigation panel --&gt;
+&lt;div class="holder"&gt;&lt;/div&gt;
+
+&lt;!-- Item container (doesn't need to be an UL) --&gt;
+&lt;ul id=&quot;itemContainer&quot;&gt;
+    &lt;!-- Items --&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    ...
+&lt;/ul&gt;
+
+</code></pre>
+
+        <p>Initiate the plugin:</p>
+<pre><code class="json">$(function(){
+
+    $("div.holder").jPages({
+        containerID : "itemContainer"
+    });
+    
+});
+    
+</code></pre>
+
+        <p>This is how the 'div.holder' source code will look like (imagining that 10 pages were created):</p>
+<pre><code class="html" style="display:block;">&lt;!-- navigation panel --&gt;
+&lt;div class="holder"&gt;
+    &lt;a class="jp-previous jp-disabled"&gt;← previous&lt;/a&gt;
+    &lt;a class="jp-current"&gt;1&lt;/a&gt;
+    &lt;span class="jp-hidden"&gt;...&lt;/span&gt;
+    &lt;a&gt;2&lt;/a&gt;
+    &lt;a&gt;3&lt;/a&gt;
+    &lt;a&gt;4&lt;/a&gt;
+    &lt;a&gt;5&lt;/a&gt;
+    &lt;a class="jp-hidden"&gt;6&lt;/a&gt;
+    &lt;a class="jp-hidden"&gt;7&lt;/a&gt;
+    &lt;a class="jp-hidden"&gt;8&lt;/a&gt;
+    &lt;a class="jp-hidden"&gt;9&lt;/a&gt;
+    &lt;span&gt;...&lt;/span&gt;
+    &lt;a&gt;10&lt;/a&gt;
+    &lt;a class="jp-next"&gt;next →&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+    <p>See how it looks like with the <a href="defaults.html">default options</a>.</p>
+
+    <h2>Styling</h2>
+
+<p>jPages comes with a style sheet so it can work right out of the box. The default style is very simple. This is what you need to know to style it in your own way.</p>
+<p>Below there's a list of classes used in the navigation links. They all have the "jp-" suffix to prevent conflicts with classes you might have created before:</p>
+
+<dl class="clearfix">
+
+    <dt>jp-first</dt>
+    <dd>Added to the button 'first' (not created by default)</dd>
+    
+    <dt>jp-previous</dt>
+    <dd>Added to the button 'previous'</dd>
+    
+    <dt>jp-next</dt>
+    <dd>Added to the button 'next'</dd>
+    
+    <dt>jp-last</dt>
+    <dd>Added to the button 'last'</dd>
+    
+    <dt>jp-current</dt>
+    <dd>Added to link correspondent to the current page</dd>
+    
+    <dt>jp-disabled</dt>
+    <dd>If the current page is the first, 'first' and 'previous' buttons will have this class. The same happens to the 'next' and 'last' buttons if the current page is the last one.</dd>
+    
+    <dt>jp-hidden</dt>
+    <dd>Use to hide elements (automatically added so you won't find it in the stylesheet)</dd>
+</dl>
+        
+	</div> <!--! end of #content -->
+</div> <!--! end of #container -->
+
+</body>
+</html>
