@@ -287,7 +287,7 @@ div#content pre.collapse code { display:block; }
 /* Content -> Unordered Lists */
 
 div#content ul#itemContainer { list-style: none; padding:0; margin: 20px 0;  }
-div#content ul#itemContainer li { display: inline-block; margin: 5px; }
+div#content ul#itemContainer li { display: inline-block; margin: 5px; zoom: 1; *display:inline; }
 div#content ul#itemContainer ll li img { vertical-align: bottom; width: 125px; height: 125px; }
 
 /* Content -> index */
@@ -303,6 +303,10 @@ div#content.index i + p { margin-top: 5px; }
 
 /* Content -> documentation */
 
+<<<<<<< HEAD
+div#content.documentation h2 { margin-top: 55px; }
+=======
+>>>>>>> master
 div#content.documentation dl dt,
 div#content.documentation dl dd { float: left; margin-top: 10px; }
 div#content.documentation dl dt { clear: left; width: 70px; font-style: italic; }
