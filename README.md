@@ -7,13 +7,15 @@ The plugin is very unobtrusive and it won't apply any extra styles to the items 
 jPages [Project page](http://luis-almeida.github.com/jPages/)
 
 
+
 Browser compatibility (tested):
 
-IE7+
+IE7
 Chrome (current version)
 Firefox (current version)
 Safari (current version)
 Opera (current version)
+
 
 
 Release log:
