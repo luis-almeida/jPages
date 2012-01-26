@@ -10,10 +10,10 @@ jPages [Project page](http://luis-almeida.github.com/jPages/)
 
 Browser compatibility (tested):
 
-IE7
-Chrome (current version)
-Firefox (current version)
-Safari (current version)
+IE7,
+Chrome (current version),
+Firefox (current version),
+Safari (current version),
 Opera (current version)
 
 
