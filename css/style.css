@@ -246,10 +246,10 @@ div#sidebar h1 { font-size:21px; color:#FF4242; margin-bottom:30px; text-shadow:
 div#sidebar h2 { margin: 15px 0 5px 0px; font-size: 12px; }
 
 div#sidebar ul { list-style: none; margin: 0; padding: 0; }
-div#sidebar ul a { color: gray; line-height: 1.8; }
-div#sidebar ul a:hover { background-color: #222; color: white; }
-div#sidebar ul a.selected { color: #FF4242; font-weight: bold; }
-div#sidebar ul a.selected:hover { background: none; color: #FF4242; }
+div#sidebar ul li a { color: gray; line-height: 1.8; }
+div#sidebar ul li a:hover { background-color: #222; color: white; }
+div#sidebar ul li.selected a { color: #FF4242; font-weight: bold; }
+div#sidebar ul li.selected a:hover { background: none; color: #FF4242; }
 
 /* Content */
 

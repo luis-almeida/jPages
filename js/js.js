@@ -1,14 +1,13 @@
 $(function(){
     
-    /* select current page on the menu */
+    /* select current page on the menu 
     var sPath = window.location.pathname;
     var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
     $("div#sidebar ul li a[href='"+sPage+"']").addClass("selected");
     
-    if ( sPage.indexOf("author") !== -1 || sPage.indexOf("index") !== -1 ) return;
+    if ( sPage.indexOf("author") !== -1 || sPage.indexOf("index") !== -1 ) return;*/
 
     /* build and append preformated code examples */
-    //$("div#content").append(buildCodeBlocks);
     $("div#content").find("p").last().after(buildCodeBlocks);
 
     /* toggle/collapse preformated code blocks */
