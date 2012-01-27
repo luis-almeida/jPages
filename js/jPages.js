@@ -566,13 +566,13 @@
     };
 
     Plugin.prototype.setMinHeight = function () {
-        setTimeout( this.bind( function() {
-            if ( this.options.minHeight ) { 
+        if ( this.options.minHeight && !this._container.is("table, tbody") ) { 
+            setTimeout( this.bind( function() {
                 this._container.css({
                     "min-height" : this._container.css("height")
                 });
-            };
-        }, this ), 1000 );
+            }, this ), 1000 );
+        };
     };
 
     Plugin.prototype.bind = function ( fn, me ) {
