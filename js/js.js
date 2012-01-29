@@ -19,7 +19,7 @@ $(function(){
 function buildCodeBlocks() {
     return "<div class='codeBlocks clearfix'>" +
     "<pre class='html'><code>" + getHtml() + "</code></pre>" +
-    "<pre class='javascript'><code>" + cleanJson( $("head script").text() ) + "</code></pre>" +
+    "<pre class='javascript'><code>" + cleanJson( $("head script").last().text() ) + "</code></pre>" +
     "<pre class='css'><code>" + cleanCSS( $("head style").text() ) + "</code></pre>" +
     "</div>";
 }

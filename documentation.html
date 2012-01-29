@@ -16,16 +16,6 @@
     <script type="text/javascript" src="js/highlight.pack.js"></script>
     <script src="js/js.js"></script>
     
-    <script>
-        $(function(){
-        
-            $('pre code').each( function(i, e) {
-                hljs.highlightBlock(e, '    ');
-            });
-        
-        });
-    </script>
-    
     <script type="text/javascript">
     
         var _gaq = _gaq || [];
@@ -38,6 +28,16 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     
+    </script>
+    
+    <script>
+        $(function(){
+        
+            $('pre code').each( function(i, e) {
+                hljs.highlightBlock(e, '    ');
+            });
+        
+        });
     </script>
     
 </head>
