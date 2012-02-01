@@ -303,10 +303,7 @@ div#content.index i + p { margin-top: 5px; }
 
 /* Content -> documentation */
 
-<<<<<<< HEAD
 div#content.documentation h2 { margin-top: 55px; }
-=======
->>>>>>> master
 div#content.documentation dl dt,
 div#content.documentation dl dd { float: left; margin-top: 10px; }
 div#content.documentation dl dt { clear: left; width: 70px; font-style: italic; }
