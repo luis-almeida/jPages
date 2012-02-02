@@ -251,6 +251,8 @@ div#sidebar ul li a:hover { background-color: #222; color: white; }
 div#sidebar ul li.selected a { color: #FF4242; font-weight: bold; }
 div#sidebar ul li.selected a:hover { background: none; color: #FF4242; }
 
+div#sidebar div.share{ margin-top:20px; }
+
 /* Content */
 
 div#content { float: left; width: 680px; }
