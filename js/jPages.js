@@ -6,8 +6,8 @@
         defaults = {
             containerID  : "",
             first        : false,
-            previous     : "← previous",
-            next         : "next →",
+            previous     : "&#8592; previous",
+            next         : "next &#8594;",
             last         : false,
             links        : "numeric", // blank || title
             startPage    : 1,
