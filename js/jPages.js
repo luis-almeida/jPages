@@ -46,8 +46,9 @@
         this._previous = $( this.options.previous );
         this._next = $( this.options.next );
         this._last = $( this.options.last );
-
-        this._items = this._container.children();
+        
+        /* only visible items! */
+        this._items = this._container.children(":visible");
         this._itemsShowing = $([]);
         this._itemsHiding = $([]);
 
@@ -596,8 +597,6 @@
         };
 
         this._holder.unbind("click.jPages").empty();
-
-        delete instance;
     };
 
 
@@ -617,6 +616,9 @@
 
         if ( type === "string" && arg === "destroy" ) {
             instance.destroy();
+            this.each( function() {
+                $.removeData( this, name );
+            } );
             return this;
         };
 
