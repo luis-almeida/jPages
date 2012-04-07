@@ -1,4 +1,13 @@
-
+/**
+ * jQuery Filtrify v0.3
+ * Client side pagination with jQuery
+ * http://luis-almeida.github.com/jPages
+ *
+ * Licensed under the MIT license.
+ * Copyright 2012 Luís Almeida
+ * https://github.com/luis-almeida
+ */
+ 
 (function ( $, window, document, undefined ) {
 
     var name = "jPages",
@@ -593,7 +602,7 @@
         if ( this._cssAnimSupport && this.options.animation.length ) { 
             this._items.removeClass("animated jp-hidden jp-invisible " + this.options.animation);
         } else {    
-            this._items.show().fadeTo(0, 1);
+            this._items.removeClass("jp-hidden").fadeTo(0, 1);
         };
 
         this._holder.unbind("click.jPages").empty();
