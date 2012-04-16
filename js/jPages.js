@@ -1,5 +1,5 @@
 /**
- * jQuery Filtrify v0.3
+ * jQuery jPages v0.4
  * Client side pagination with jQuery
  * http://luis-almeida.github.com/jPages
  *
@@ -33,7 +33,7 @@
             animation    : "", // http://daneden.me/animate/ - any entrance animations
             fallback     : 400,
             minHeight    : true,
-            callback     : function( pages, items ) { }
+            callback     : undefined // function( pages, items ) { }
         };
 
 
@@ -69,7 +69,7 @@
 
         this.init();
         
-    };
+    }
 
     Plugin.prototype.getCSSAnimationSupport = function () {
         var animation = false,
@@ -89,9 +89,9 @@
                     keyframeprefix = '-' + pfx.toLowerCase() + '-';
                     animation = true;
                     break;
-                };
-            };
-        };
+                }
+            }
+        }
 
         return animation;
     };
@@ -116,7 +116,7 @@
             this._items.addClass("animated jp-hidden");
         } else {
             this._items.hide();
-        };
+        }
         
     };
 
@@ -131,8 +131,8 @@
             this.disableNavSelection( element );
         }, this) );
 
-        if ( this.options.keyBrowse ) { this.bindNavKeyBrowse() };
-        if ( this.options.scrollBrowse ) { this.bindNavScrollBrowse() };
+        if ( this.options.keyBrowse ) this.bindNavKeyBrowse(); 
+        if ( this.options.scrollBrowse ) this.bindNavScrollBrowse();
     };
 
     Plugin.prototype.writeNav = function () {
@@ -144,13 +144,13 @@
 
             if ( i === 1 && this.options.startRange === 0 ) {
                 navhtml += "<span>...</span>";
-            };
+            }
 
             if ( i > this.options.startRange && i <= this._numPages - this.options.endRange ) {
-                navhtml += "<a class='jp-hidden'>";
+                navhtml += "<a href='#' class='jp-hidden'>";
             } else {
                 navhtml += "<a>";
-            };
+            }
 
             switch ( this.options.links ) {
                 case "numeric" :
@@ -162,14 +162,14 @@
                     var title = this._items.eq(i-1).attr("data-title");
                     navhtml += title !== undefined ? title : "";
                     break;
-            };
+            }
 
             navhtml += "</a>";
 
             if ( i === this.options.startRange || i === this._numPages - this.options.endRange ) {
                 navhtml += "<span>...</span>";
             }
-        };
+        }
         
         navhtml += this.writeBtn( "next" ) + this.writeBtn( "last" ) + "</div>";
 
@@ -212,60 +212,65 @@
             if ( this.validNewPage( newPage ) ) {
                 this._clicked = true;
                 this.paginate( newPage );
-            };
+            }
+            evt.preventDefault();
         }, this ) );
 
         // custom first
         if ( this._first.length ) {
-            this._first.bind( "click.jPages", this.bind( function( evt ) {
+            this._first.bind( "click.jPages", this.bind( function() {
                 if ( this.validNewPage( 1 ) ) {
                     this._clicked = true;
                     this.paginate( 1 );
-                };
+                }
             }, this ) );
-        };
+        }
 
         // custom previous
         if ( this._previous.length ) {
-            this._previous.bind( "click.jPages", this.bind( function( evt ) {
+            this._previous.bind( "click.jPages", this.bind( function() {
                 var newPage = this._currentPageNum - 1;
                 if ( this.validNewPage( newPage ) ) {
                     this._clicked = true;
                     this.paginate( newPage );
-                };
+                }
             }, this ) );
-        };
+        }
 
         // custom next
         if ( this._next.length ) {
-            this._next.bind( "click.jPages", this.bind( function( evt ) {
+            this._next.bind( "click.jPages", this.bind( function() {
                 var newPage = this._currentPageNum + 1;
                 if ( this.validNewPage( newPage ) ) {
                     this._clicked = true;
                     this.paginate( newPage );
-                };
+                }
             }, this ) );
-        };
+        }
 
         // custom last
         if ( this._last.length ) {
-            this._last.bind( "click.jPages", this.bind( function( evt ) {
+            this._last.bind( "click.jPages", this.bind( function() {
                 if ( this.validNewPage( this._numPages ) ) {
                     this._clicked = true;
                     this.paginate( this._numPages );
-                };
+                }
             }, this ) );
-        };
+        }
 
     };
 
     Plugin.prototype.disableNavSelection = function ( element ) {
-        if (typeof element.onselectstart != 'undefined') {
-            element.onselectstart = function() { return false; };
-        } else if (typeof element.style.MozUserSelect != 'undefined') {
-            element.style.MozUserSelect = 'none';
+        if ( typeof element.onselectstart != "undefined" ) {
+            element.onselectstart = function() { 
+                return false; 
+            };
+        } else if (typeof element.style.MozUserSelect != "undefined") {
+            element.style.MozUserSelect = "none";
         } else {
-            element.onmousedown = function() { return false; };
+            element.onmousedown = function() { 
+                return false; 
+            };
         }
     };
 
@@ -275,14 +280,14 @@
             if ( this.elemScrolledIntoView() && target !== "input" && target != "textarea" ) {
                 var newPage = this._currentPageNum;
                 
-                if ( evt.which == 37 ) { newPage = this._currentPageNum - 1 };
-                if ( evt.which == 39 ) { newPage = this._currentPageNum + 1 };
+                if ( evt.which == 37 ) newPage = this._currentPageNum - 1;
+                if ( evt.which == 39 ) newPage = this._currentPageNum + 1;
 
                 if ( this.validNewPage( newPage ) ) {
                     this._clicked = true;
                     this.paginate( newPage );
-                };
-            };
+                }
+            }
         }, this ) );
     };
 
@@ -306,14 +311,14 @@
 
     Plugin.prototype.bindNavScrollBrowse = function () {
 
-        this._container.bind( "mousewheel.jPages DOMMouseScroll.jPages", this.bind( function( evt, delta ) {
+        this._container.bind( "mousewheel.jPages DOMMouseScroll.jPages", this.bind( function( evt ) {
             var newPage = ( evt.wheelDelta || -evt.detail ) > 0 ? 
                 ( this._currentPageNum - 1 ) : ( this._currentPageNum + 1 );
 
             if ( this.validNewPage( newPage ) ) {
                 this._clicked = true;
                 this.paginate( newPage );
-            };
+            }
 
             return false;
 
@@ -323,12 +328,12 @@
 
     Plugin.prototype.getNewPage = function ( nav, target ) {
 
-        if ( target.is( nav.currentPage ) ) { return this._currentPageNum; }
-        if ( target.is( nav.pages ) ) { return nav.pages.index(target) + 1; }
-        if ( target.is( nav.first ) ) { return 1; }
-        if ( target.is( nav.last ) ) { return this._numPages; }
-        if ( target.is( nav.previous ) ) { return nav.pages.index(nav.currentPage); }
-        if ( target.is( nav.next ) ) { return nav.pages.index(nav.currentPage) + 2; }
+        if ( target.is( nav.currentPage ) ) return this._currentPageNum;
+        if ( target.is( nav.pages ) ) return nav.pages.index(target) + 1;
+        if ( target.is( nav.first ) ) return 1;
+        if ( target.is( nav.last ) ) return this._numPages;
+        if ( target.is( nav.previous ) ) return nav.pages.index(nav.currentPage);
+        if ( target.is( nav.next ) ) return nav.pages.index(nav.currentPage) + 2;
 
     };
 
@@ -344,9 +349,11 @@
         pageInterval = this.updatePages( page );
 
         this._currentPageNum = page;
-
-        this.callback( page, itemRange, pageInterval );
-
+        
+        if ( $.isFunction( this.options.callback ) ) {
+            this.callback( page, itemRange, pageInterval );
+        }
+        
         this.updatePause();
     };
 
@@ -360,7 +367,7 @@
             this.cssAnimations( page );
         } else {
             this.jQAnimations( page );
-        };
+        }
 
         return range;
     };
@@ -373,7 +380,7 @@
         
         if ( range.end > this._items.length ) {
             range.end = this._items.length;
-        };
+        }
 
         return range;
     };
@@ -401,7 +408,7 @@
                     .eq(this._index)
                     .removeClass("jp-invisible")
                     .addClass(this.options.animation);
-            };
+            }
 
             this._index = this._index + 1;
 
@@ -426,7 +433,7 @@
                 this._itemsOriented
                     .eq(this._index)
                     .fadeTo(this.options.fallback, 1);
-            };
+            }
 
             this._index = this._index + 1;
 
@@ -442,7 +449,7 @@
                 break;
             case "random" :
                 itemsToShow = $( this._itemsShowing.get().sort( function() { 
-                    return (Math.round(Math.random())-0.5) 
+                    return ( Math.round( Math.random() ) - 0.5 );
                 } ) );
                 break;
             case "auto" :
@@ -451,7 +458,7 @@
                 break;
             default :
                 itemsToShow = this._itemsShowing;
-        };
+        }
 
         return itemsToShow;
     };
@@ -468,8 +475,8 @@
                 this.updateCurrentPage( nav, page );
                 this.updatePagesShowing( nav, interval );
                 this.updateBreaks( nav, interval );
-            };
-        };
+            }
+        }
 
         return interval;
     };
@@ -490,22 +497,22 @@
         if ( page === 1 ) {
             nav.first.addClass("jp-disabled");
             nav.previous.addClass("jp-disabled");
-        };
+        }
 
         if ( page === this._numPages ) {
             nav.next.addClass("jp-disabled");
             nav.last.addClass("jp-disabled");
-        };
+        }
 
         if ( this._currentPageNum === 1 && page > 1 ) {
             nav.first.removeClass("jp-disabled");
             nav.previous.removeClass("jp-disabled");
-        };
+        }
 
         if ( this._currentPageNum === this._numPages && page < this._numPages ) {
             nav.next.removeClass("jp-disabled");
             nav.last.removeClass("jp-disabled");
-        };
+        }
         
     };
 
@@ -532,13 +539,13 @@
             nav.fstBreak.removeClass("jp-hidden");
         } else { 
             nav.fstBreak.addClass("jp-hidden");
-        };
+        }
         
         if ( interval.end < this._numPages - this.options.endRange ) {
             nav.lstBreak.removeClass("jp-hidden");
         } else { 
             nav.lstBreak.addClass("jp-hidden");
-        };
+        }
         
     };
 
@@ -558,8 +565,7 @@
         pages.interval.start = pages.interval.start + 1;
         items.range.start = items.range.start + 1;
 
-        return $.isFunction( this.options.callback ) ? 
-            this.options.callback( pages, items ) : false;
+        this.options.callback( pages, items );
     };
 
     Plugin.prototype.updatePause = function () {
@@ -571,8 +577,8 @@
                 this._pause = setTimeout( this.bind( function() {
                     this.paginate( this._currentPageNum !== this._numPages ? this._currentPageNum + 1 : 1 );
                 }, this ), this.options.pause );
-            };
-        };
+            }
+        }
     };
 
     Plugin.prototype.setMinHeight = function () {
@@ -582,7 +588,7 @@
                     "min-height" : this._container.css("height")
                 });
             }, this ), 1000 );
-        };
+        }
     };
 
     Plugin.prototype.bind = function ( fn, me ) {
@@ -597,13 +603,13 @@
 
         if ( this.options.minHeight ) {
             this._container.css("min-height", "");
-        };
+        }
 
         if ( this._cssAnimSupport && this.options.animation.length ) { 
             this._items.removeClass("animated jp-hidden jp-invisible " + this.options.animation);
         } else {    
             this._items.removeClass("jp-hidden").fadeTo(0, 1);
-        };
+        }
 
         this._holder.unbind("click.jPages").empty();
     };
@@ -619,9 +625,9 @@
                 this.each( function() {
                     $.data( this, name, instance );
                 } );
-            };
+            }
             return this;
-        };
+        }
 
         if ( type === "string" && arg === "destroy" ) {
             instance.destroy();
@@ -629,14 +635,14 @@
                 $.removeData( this, name );
             } );
             return this;
-        };
+        }
 
         if ( type === 'number' && arg % 1 === 0 ) {
             if ( instance.validNewPage( arg ) ) {
                 instance.paginate( arg );
-            };
+            }
             return this;
-        };
+        }
 
         return this;
     };
