@@ -204,8 +204,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 body { 
   font: 12px 'Helvetica Neue', Helvetica, Arial, Sans-Serif; 
-  border-top: 15px solid #F0F2EB;
-  padding: 20px 20px 200px 20px;
+  padding: 0 0 200px 0;
 }
 
 h1, h2, h3, h4, h5 {
@@ -221,6 +220,17 @@ p { margin: 0 0 5px 0; }
 /* Container */
 
 div#container { width: 900px; }
+
+/* Filtrify link*/
+div#filtrify { 
+    background: #F0F2EB;
+    margin-bottom: 20px;
+    padding: 5px 20px;
+    font-style: italic;
+    color: gray;
+    text-shadow: 0 1px white;
+}
+div#filtrify a { font-weight: bold; margin-left: 3px; }
 
 /* Header */
 
@@ -239,7 +249,7 @@ div#container header h1:after {
 
 /* Sidebar */
 
-div#sidebar {  float: left; width: 220px; font-size: 12px; line-height: 18px; }
+div#sidebar {  float: left; width: 200px; font-size: 12px; line-height: 18px; margin-left: 20px; }
 
 div#sidebar h1 { font-size:21px; color:#FF4242; margin-bottom:30px; text-shadow: 0 1px 0 #ddd; }
 
@@ -317,11 +327,6 @@ div#content.documentation i + p { margin-top: 5px; }
 div#content.author img { margin-bottom: 50px; }
 div#content.author img + p:before { content: '“'; font-size:65px; font-family: Georgia; position:absolute; top: -55px; color: #ccc; }
 div#content.author p { width: 590px; position: relative; }
-
-/* Filtrify link*/
-div#filtrify { position: absolute; top: 0px; right: 10px; font-size: 11px; color: gray; }
-div#filtrify a { font-family: "Georgia"; font-style: italic; letter-spacing: 1px; }
-div#filtrify a:hover { background-color: #222; color: white; }
 
 /* =============================================================================
    Non-semantic helper classes
