@@ -1,5 +1,5 @@
 /**
- * jQuery jPages v0.4
+ * jQuery jPages v0.5
  * Client side pagination with jQuery
  * http://luis-almeida.github.com/jPages
  *
@@ -311,7 +311,7 @@
 
     Plugin.prototype.bindNavScrollBrowse = function () {
 
-        this._container.bind( "mousewheel.jPages DOMMouseScroll.jPages", this.bind( function( evt ) {
+        this._container.bind( "mousewheel.jPages DOMMouseScroll.jPages", this.bind(function( evt ) {
             var newPage = ( evt.wheelDelta || -evt.detail ) > 0 ? 
                 ( this._currentPageNum - 1 ) : ( this._currentPageNum + 1 );
 
@@ -319,10 +319,11 @@
                 this._clicked = true;
                 this.paginate( newPage );
             }
-
+            
+            evt.preventDefault();
             return false;
 
-        }, this ) );
+        }, this) );
 
     };
 
