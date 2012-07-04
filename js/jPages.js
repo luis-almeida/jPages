@@ -11,7 +11,6 @@
 ;(function ( $, window, document, undefined ) {
 
     var name = "jPages",
-        instance = null,
         defaults = {
             containerID  : "",
             first        : false,
@@ -622,7 +621,7 @@
 
         if ( type === "object" ) {
             if ( this.length && !$.data( this, name ) ) {
-                instance = new Plugin( this, arg );
+                var instance = new Plugin( this, arg );
                 this.each( function() {
                     $.data( this, name, instance );
                 } );
@@ -631,17 +630,23 @@
         }
 
         if ( type === "string" && arg === "destroy" ) {
-            instance.destroy();
             this.each( function() {
+             var instance = $.data( this, name );
+            	
+            	instance.destroy();
                 $.removeData( this, name );
             } );
             return this;
         }
 
         if ( type === 'number' && arg % 1 === 0 ) {
-            if ( instance.validNewPage( arg ) ) {
-                instance.paginate( arg );
-            }
+        	this.each( function() {
+        		var instance = $.data( this, name );
+        		
+        		if ( instance.validNewPage( arg ) ) {
+        			instance.paginate( arg );
+        		}
+        	} );
             return this;
         }
 
