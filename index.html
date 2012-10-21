@@ -1,151 +1,151 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>jPages</title>
-	<meta name="description" content="jPages">
-    <meta name="keywords" content="jquery, pagination, javascript, plugin" />
-	<meta name="author" content="Luís Almeida">
+  <title>jPages</title>
+  <meta name="description" content="jPages">
+  <meta name="keywords" content="jquery, pagination, javascript, plugin" />
+  <meta name="author" content="Luís Almeida">
 
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/github.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/highlight.pack.js"></script>
-    
-    <script>
-        $(function(){
-        
-            $('pre code').each( function(i, e) {
-                hljs.highlightBlock(e, '    ');
-            });
-        
-        });
-    </script>
-    
-    <script type="text/javascript">
-    
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-28718218-1']);
-        _gaq.push(['_trackPageview']);
-        
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    
-    </script>
-    
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/github.css">
+  <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="js/highlight.pack.js"></script>
+
+  <script>
+  $(function(){
+
+    $('pre code').each( function(i, e) {
+      hljs.highlightBlock(e, '    ');
+    });
+
+  });
+  </script>
+
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28718218-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  </script>
+
 </head>
 <body>
 
-<div id="filtrify">by the same author of <a href="http://luis-almeida.github.com/filtrify/">filtrify</a></div>
+  <div id="filtrify">by the same author of <a href="http://luis-almeida.github.com/filtrify/">filtrify</a></div>
 
-<div id="container" class="clearfix">
+  <div id="container" class="clearfix">
 
-	<div id="sidebar">
-        <h1 id="header">jPages</h1>
-        <ul id="menu">
-            <li class="selected"><a href="http://luis-almeida.github.com/jPages/">Info</a></li>
-        	<li><a href="documentation.html">documentation</a></li>
-            <li><a href="theauthor.html">the author</a></li>
-            <li><a href="download.html">download</a></li>
-		</ul>
-        
-		<h2>Examples</h2>
-		<ul>
-			<li><a href="defaults.html">defaults</a></li>
-    		<li><a href="pagination.html">pagination</a></li>
-            <li><a href="itemsperpage.html">items per page</a></li>
-			<li><a href="customizebuttons.html">customize buttons</a></li>
-            <li><a href="custombuttons.html">custom buttons</a></li>
-			<li><a href="blanklinks.html">blank links</a></li>
-            <li><a href="titlelinks.html">title links</a></li>
-			<li><a href="keybrowse.html">key browse</a></li>
-            <li><a href="scrollbrowse.html">scroll browse</a></li>
-			<li><a href="auto.html">auto</a></li>
-			<li><a href="direction.html">direction</a></li>
-			<li><a href="cssanimation.html">css animation</a></li>
-            <li><a href="jqueryanimation.html">jQuery animation</a></li>
-			<li><a href="callback.html">callback</a></li>
-            <li><a href="jumptopage.html">jump to page</a></li>
-            <li><a href="destroy.html">destroy</a></li>
-            <li><a href="lazyload.html">lazy load</a></li>
-		</ul>
-        
-        <h2>Demos</h2>
-        <ul>
-			<li><a href="mosaic.html">mosaic</a></li>
-            <li><a href="gallery.html">gallery</a></li>
-            <li><a href="table.html">table</a></li>
-		</ul>
-        
-        <div class="share">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://luis-almeida.github.com/jPages/" data-text="jPages" data-via="lmgalmeida" data-hashtags="jQuery">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
-        
-	</div> <!--! end of #sidebar -->
+    <div id="sidebar">
+      <h1 id="header">jPages</h1>
+      <ul id="menu">
+        <li class="selected"><a href="http://luis-almeida.github.com/jPages/">Info</a></li>
+        <li><a href="documentation.html">documentation</a></li>
+        <li><a href="theauthor.html">the author</a></li>
+        <li><a href="download.html">download</a></li>
+      </ul>
 
-	<div id="content" class="index">
-    
-        <h2 style="margin-top:0;">What does it do?</h2>
-        <p>jPages is a client-side pagination plugin but it gives you a lot more features comparing to most of the other plugins for this purpose, such as auto page turn, key and scroll browse, showing items with delay, completely customizable navigation panel and also integration with <a href="http://daneden.me/animate/">Animate.css</a> and <a href="http://www.appelsiini.net/projects/lazyload">Lazy Load</a>.</p> 
-        <p>Apart from all its features, the main diference for the other pagination plugins is that with jPages you can create as many navigation panels as you want and you can choose exactly where to place them.</p>
-        <p>The plugin is very unobtrusive and it won't apply any extra styles to the items you are paginating. It will only create and insert the links inside the element(s) you are applying the plugin to, in order to turn them into navigation panel(s).</p>
-        
-        <p style="margin-top:20px;"><strong>Compatible with All Browsers and IE7+</strong></p>
-        
-        <h2>How to</h2>
-        
-        <p>Add the following code to the &lt;head&gt; section of your page (correct file locations first):</p>
-        
-<pre><code class="html">&lt;link rel="stylesheet" href="css/jPages.css"&gt;
-&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script src="js/jPages.js"&gt;&lt;/script&gt;
-</code></pre>
+      <h2>Examples</h2>
+      <ul>
+        <li><a href="defaults.html">defaults</a></li>
+        <li><a href="pagination.html">pagination</a></li>
+        <li><a href="itemsperpage.html">items per page</a></li>
+        <li><a href="customizebuttons.html">customize buttons</a></li>
+        <li><a href="custombuttons.html">custom buttons</a></li>
+        <li><a href="blanklinks.html">blank links</a></li>
+        <li><a href="titlelinks.html">title links</a></li>
+        <li><a href="keybrowse.html">key browse</a></li>
+        <li><a href="scrollbrowse.html">scroll browse</a></li>
+        <li><a href="auto.html">auto</a></li>
+        <li><a href="direction.html">direction</a></li>
+        <li><a href="cssanimation.html">css animation</a></li>
+        <li><a href="jqueryanimation.html">jQuery animation</a></li>
+        <li><a href="callback.html">callback</a></li>
+        <li><a href="jumptopage.html">jump to page</a></li>
+        <li><a href="destroy.html">destroy</a></li>
+        <li><a href="lazyload.html">lazy load</a></li>
+      </ul>
 
-        <p>In case you want to use <a href="http://daneden.me/animate/">Animate.css</a> animations you will also need to add the file:</p>
-        
-<pre><code class="html" style="display:block;">&lt;link rel="stylesheet" href="css/animate.css"&gt;
+      <h2>Demos</h2>
+      <ul>
+        <li><a href="mosaic.html">mosaic</a></li>
+        <li><a href="gallery.html">gallery</a></li>
+        <li><a href="table.html">table</a></li>
+      </ul>
 
-</code></pre>
+      <div class="share">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://luis-almeida.github.com/jPages/" data-text="jPages" data-via="lmgalmeida" data-hashtags="jQuery">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
 
-        <p>Example source code:</p>
-<pre><code class="html">&lt;!-- Future navigation panel --&gt;
-&lt;div class="holder"&gt;&lt;/div&gt;
+    </div> <!--! end of #sidebar -->
 
-&lt;!-- Item container (doesn't need to be an UL) --&gt;
-&lt;ul id=&quot;itemContainer&quot;&gt;
-    &lt;!-- Items --&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    ...
-&lt;/ul&gt;
+    <div id="content" class="index">
 
-</code></pre>
+      <h2 style="margin-top:0;">What does it do?</h2>
+      <p>jPages is a client-side pagination plugin but it gives you a lot more features comparing to most of the other plugins for this purpose, such as auto page turn, key and scroll browse, showing items with delay, completely customizable navigation panel and also integration with <a href="http://daneden.me/animate/">Animate.css</a> and <a href="http://www.appelsiini.net/projects/lazyload">Lazy Load</a>.</p>
+      <p>Apart from all its features, the main diference for the other pagination plugins is that with jPages you can create as many navigation panels as you want and you can choose exactly where to place them.</p>
+      <p>The plugin is very unobtrusive and it won't apply any extra styles to the items you are paginating. It will only create and insert the links inside the element(s) you are applying the plugin to, in order to turn them into navigation panel(s).</p>
 
-        <p>Initiate the plugin:</p>
-<pre><code class="json">$(function(){
+      <p style="margin-top:20px;"><strong>Compatible with All Browsers and IE7+</strong></p>
 
-    $("div.holder").jPages({
+      <h2>How to</h2>
+
+      <p>Add the following code to the &lt;head&gt; section of your page (correct file locations first):</p>
+
+      <pre><code class="html">&lt;link rel="stylesheet" href="css/jPages.css"&gt;
+        &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script src="js/jPages.js"&gt;&lt;/script&gt;
+      </code></pre>
+
+      <p>In case you want to use <a href="http://daneden.me/animate/">Animate.css</a> animations you will also need to add the file:</p>
+
+      <pre><code class="html" style="display:block;">&lt;link rel="stylesheet" href="css/animate.css"&gt;
+
+      </code></pre>
+
+      <p>Example source code:</p>
+      <pre><code class="html">&lt;!-- Future navigation panel --&gt;
+        &lt;div class="holder"&gt;&lt;/div&gt;
+
+        &lt;!-- Item container (doesn't need to be an UL) --&gt;
+        &lt;ul id=&quot;itemContainer&quot;&gt;
+        &lt;!-- Items --&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        ...
+        &lt;/ul&gt;
+
+      </code></pre>
+
+      <p>Initiate the plugin:</p>
+      <pre><code class="json">$(function(){
+
+        $("div.holder").jPages({
         containerID : "itemContainer"
-    });
-    
-});
-    
-</code></pre>
+      });
 
-        <p>This is how the 'div.holder' source code will look like (imagining that 10 pages were created):</p>
-<pre><code class="html" style="display:block;">&lt;!-- navigation panel --&gt;
-&lt;div class="holder"&gt;
+    });
+
+  </code></pre>
+
+  <p>This is how the 'div.holder' source code will look like (imagining that 10 pages were created):</p>
+  <pre><code class="html" style="display:block;">&lt;!-- navigation panel --&gt;
+    &lt;div class="holder"&gt;
     &lt;a class="jp-previous jp-disabled"&gt;← previous&lt;/a&gt;
     &lt;a class="jp-current"&gt;1&lt;/a&gt;
     &lt;span class="jp-hidden"&gt;...&lt;/span&gt;
@@ -160,40 +160,40 @@
     &lt;span&gt;...&lt;/span&gt;
     &lt;a&gt;10&lt;/a&gt;
     &lt;a class="jp-next"&gt;next →&lt;/a&gt;
-&lt;/div&gt;</code></pre>
+    &lt;/div&gt;</code></pre>
 
     <p>See how it looks like with the <a href="defaults.html">default options</a>.</p>
 
     <h2>Styling</h2>
 
-<p>jPages comes with a style sheet so it can work right out of the box. The default style is very simple. This is what you need to know to style it in your own way.</p>
-<p>Below there's a list of classes used in the navigation links. They all have the "jp-" suffix to prevent conflicts with classes you might have created before:</p>
+    <p>jPages comes with a style sheet so it can work right out of the box. The default style is very simple. This is what you need to know to style it in your own way.</p>
+    <p>Below there's a list of classes used in the navigation links. They all have the "jp-" suffix to prevent conflicts with classes you might have created before:</p>
 
-<dl class="clearfix">
+    <dl class="clearfix">
 
-    <dt>jp-first</dt>
-    <dd>Added to the button 'first' (not created by default)</dd>
-    
-    <dt>jp-previous</dt>
-    <dd>Added to the button 'previous'</dd>
-    
-    <dt>jp-next</dt>
-    <dd>Added to the button 'next'</dd>
-    
-    <dt>jp-last</dt>
-    <dd>Added to the button 'last' (not created by default)</dd>
-    
-    <dt>jp-current</dt>
-    <dd>Added to link correspondent to the current page</dd>
-    
-    <dt>jp-disabled</dt>
-    <dd>If the current page is the first, buttons 'first' and 'previous' will have this class. The same happens to the buttons 'next' and 'last' if the current page is the last one.</dd>
-    
-    <dt>jp-hidden</dt>
-    <dd>Used to hide elements (automatically added to the page so you won't find it in the stylesheet)</dd>
-</dl>
-        
-	</div> <!--! end of #content -->
+      <dt>jp-first</dt>
+      <dd>Added to the button 'first' (not created by default)</dd>
+
+      <dt>jp-previous</dt>
+      <dd>Added to the button 'previous'</dd>
+
+      <dt>jp-next</dt>
+      <dd>Added to the button 'next'</dd>
+
+      <dt>jp-last</dt>
+      <dd>Added to the button 'last' (not created by default)</dd>
+
+      <dt>jp-current</dt>
+      <dd>Added to link correspondent to the current page</dd>
+
+      <dt>jp-disabled</dt>
+      <dd>If the current page is the first, buttons 'first' and 'previous' will have this class. The same happens to the buttons 'next' and 'last' if the current page is the last one.</dd>
+
+      <dt>jp-hidden</dt>
+      <dd>Used to hide elements (automatically added to the page so you won't find it in the stylesheet)</dd>
+    </dl>
+
+  </div> <!--! end of #content -->
 </div> <!--! end of #container -->
 
 <a href="http://github.com/luis-almeida"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
