@@ -1,5 +1,5 @@
  /**
- * jQuery jPages v0.6
+ * jQuery jPages v0.7
  * Client side pagination with jQuery
  * http://luis-almeida.github.com/jPages
  *
