@@ -104,10 +104,10 @@
 
       <p>Add the following code to the &lt;head&gt; section of your page (correct file locations first):</p>
 
-      <pre><code class="html">&lt;link rel="stylesheet" href="css/jPages.css"&gt;
-        &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
-        &lt;script src="js/jPages.js"&gt;&lt;/script&gt;
-      </code></pre>
+<pre><code class="html">&lt;link rel="stylesheet" href="css/jPages.css"&gt;
+&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jPages.js"&gt;&lt;/script&gt;
+</code></pre>
 
       <p>In case you want to use <a href="http://daneden.me/animate/">Animate.css</a> animations you will also need to add the file:</p>
 
@@ -116,51 +116,47 @@
       </code></pre>
 
       <p>Example source code:</p>
-      <pre><code class="html">&lt;!-- Future navigation panel --&gt;
-        &lt;div class="holder"&gt;&lt;/div&gt;
+<pre><code class="html">&lt;!-- Future navigation panel --&gt;
+&lt;div class="holder"&gt;&lt;/div&gt;
 
-        &lt;!-- Item container (doesn't need to be an UL) --&gt;
-        &lt;ul id=&quot;itemContainer&quot;&gt;
-        &lt;!-- Items --&gt;
-        &lt;li&gt;...&lt;/li&gt;
-        &lt;li&gt;...&lt;/li&gt;
-        &lt;li&gt;...&lt;/li&gt;
-        &lt;li&gt;...&lt;/li&gt;
-        &lt;li&gt;...&lt;/li&gt;
-        ...
-        &lt;/ul&gt;
-
-      </code></pre>
+&lt;!-- Item container (doesn't need to be an UL) --&gt;
+&lt;ul id=&quot;itemContainer&quot;&gt;
+&lt;!-- Items --&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+...
+&lt;/ul&gt;</code></pre>
 
       <p>Initiate the plugin:</p>
-      <pre><code class="json">$(function(){
+<pre><code class="json">$(function(){
 
-        $("div.holder").jPages({
-        containerID : "itemContainer"
-      });
+  $("div.holder").jPages({
+    containerID : "itemContainer"
+  });
 
-    });
-
-  </code></pre>
+});</code></pre>
 
   <p>This is how the 'div.holder' source code will look like (imagining that 10 pages were created):</p>
-  <pre><code class="html" style="display:block;">&lt;!-- navigation panel --&gt;
-    &lt;div class="holder"&gt;
-    &lt;a class="jp-previous jp-disabled"&gt;← previous&lt;/a&gt;
-    &lt;a class="jp-current"&gt;1&lt;/a&gt;
-    &lt;span class="jp-hidden"&gt;...&lt;/span&gt;
-    &lt;a&gt;2&lt;/a&gt;
-    &lt;a&gt;3&lt;/a&gt;
-    &lt;a&gt;4&lt;/a&gt;
-    &lt;a&gt;5&lt;/a&gt;
-    &lt;a class="jp-hidden"&gt;6&lt;/a&gt;
-    &lt;a class="jp-hidden"&gt;7&lt;/a&gt;
-    &lt;a class="jp-hidden"&gt;8&lt;/a&gt;
-    &lt;a class="jp-hidden"&gt;9&lt;/a&gt;
-    &lt;span&gt;...&lt;/span&gt;
-    &lt;a&gt;10&lt;/a&gt;
-    &lt;a class="jp-next"&gt;next →&lt;/a&gt;
-    &lt;/div&gt;</code></pre>
+<pre><code class="html" style="display:block;">&lt;!-- navigation panel --&gt;
+&lt;div class="holder"&gt;
+&lt;a class="jp-previous jp-disabled"&gt;← previous&lt;/a&gt;
+&lt;a class="jp-current"&gt;1&lt;/a&gt;
+&lt;span class="jp-hidden"&gt;...&lt;/span&gt;
+&lt;a&gt;2&lt;/a&gt;
+&lt;a&gt;3&lt;/a&gt;
+&lt;a&gt;4&lt;/a&gt;
+&lt;a&gt;5&lt;/a&gt;
+&lt;a class="jp-hidden"&gt;6&lt;/a&gt;
+&lt;a class="jp-hidden"&gt;7&lt;/a&gt;
+&lt;a class="jp-hidden"&gt;8&lt;/a&gt;
+&lt;a class="jp-hidden"&gt;9&lt;/a&gt;
+&lt;span&gt;...&lt;/span&gt;
+&lt;a&gt;10&lt;/a&gt;
+&lt;a class="jp-next"&gt;next →&lt;/a&gt;
+&lt;/div&gt;</code></pre>
 
     <p>See how it looks like with the <a href="defaults.html">default options</a>.</p>
 
