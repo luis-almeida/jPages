@@ -33,7 +33,8 @@
         animation: "", // http://daneden.me/animate/ - any entrance animations
         fallback: 400,
         minHeight: true,
-        callback: undefined // function( pages, items ) { }
+        callback: undefined, // function( pages, items ) { }
+        counter: undefined // number of pages 
       };
 
 
@@ -59,7 +60,7 @@
     this._itemsShowing = $([]);
     this._itemsHiding = $([]);
 
-    this._numPages = Math.ceil(this._items.length / this.options.perPage);
+    this._numPages = (this.options.contador != undefined ? this.options.contador : ( Math.ceil( this._items.length / this.options.perPage ) ) );
     this._currentPageNum = this.options.startPage;
 
     this._clicked = false;
