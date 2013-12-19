@@ -14,6 +14,7 @@
       instance = null,
       defaults = {
         containerID: "",
+        containerSelector: "",
         first: false,
         previous: "← previous",
         next: "next →",
@@ -39,8 +40,9 @@
 
   function Plugin(element, options) {
     this.options = $.extend({}, defaults, options);
+    if(this.options.containerID) this.options.containerSelector = "#" + this.options.containerID;
 
-    this._container = $("#" + this.options.containerID);
+    this._container = $(this.options.containerSelector);
     if (!this._container.length) return;
 
     this.jQwindow = $(window);
